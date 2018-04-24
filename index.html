@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线图片滤镜</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-dark bg-info mb-5">
+        <div class="container">
+            <a href="#" class="navbar-brand">在线图片滤镜</a>
+        </div>
+    </nav>
+    <!-- 主体 -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-10 m-auto">
+                <!-- 图片选择 -->
+                <div class="custom-file mb-3">
+                    <input type="file" class="custom-file-input" id="upload-file">
+                    <label for="upload-file" class="custom-file-label">选择图片</label>
+                </div>
+
+                <!-- 画图板 -->
+                <canvas id="canvas"></canvas>
+
+                <!-- 滤镜功能 -->
+                <h4 class="text-center my-3">滤镜</h4>
+
+                <!-- 开始 -->
+                <div class="row text-center my-4">
+                    <div class="col-md-3">
+                        <!-- 亮度 -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn brightness-remove btn btn-info">-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Brightness</button>
+                            <button class="filter-btn brightness-add btn btn-info">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- 对比度 -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn contrast-remove btn btn-info">-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Contrast</button>
+                            <button class="filter-btn contrast-add btn btn-info">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- 饱和度 -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn saturation-remove btn btn-info">-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Saturation</button>
+                            <button class="filter-btn saturation-add btn btn-info">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <!-- 自然饱和度 -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn vibrance-remove btn btn-info">-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Vibrance</button>
+                            <button class="filter-btn vibrance-add btn btn-info">+</button>
+                        </div>
+                    </div>
+                </div><!-- 结束 -->
+
+                <!-- effects -->
+                <h4 class="text-center my-3">效果</h4>
+
+                <!-- 开始 -->
+                <div class="row mb-3">
+                    <!-- 复古 -->
+                    <div class="col-md-3">
+                        <button class="filter-btn vintage-add btn btn-dark btn-block">Vintage</button>
+                    </div>
+                    <!-- Lomo -->
+                    <div class="col-md-3">
+                        <button class="filter-btn lomo-add btn btn-dark btn-block">Lomo</button>
+                    </div>
+                    <!-- 清晰 -->
+                    <div class="col-md-3">
+                        <button class="filter-btn clarity-add btn btn-dark btn-block">Clarity</button>
+                    </div>
+                    <!-- 黑白 -->
+                    <div class="col-md-3">
+                        <button class="filter-btn sincity-add btn btn-dark btn-block">Sin City</button>
+                    </div>
+                </div><!-- 结束 -->
+                <!-- 开始 -->
+                <div class="row mb-3">
+                    <!-- 负片 -->
+                    <div class="col-md-3">
+                        <button class="filter-btn crossprocess-add btn btn-dark btn-block">Cross Process</button>
+                    </div>
+                    <!-- 透镜 -->
+                    <div class="col-md-3">
+                        <button class="filter-btn pinhole-add btn btn-dark btn-block">Pinhole</button>
+                    </div>
+                    <!-- 怀旧 -->
+                    <div class="col-md-3">
+                        <button class="filter-btn mostalgia-add btn btn-dark btn-block">Mostalgia</button>
+                    </div>
+                    <!-- 黑白 -->
+                    <div class="col-md-3">
+                        <button class="filter-btn hermajest-add btn btn-dark btn-block">Her Majest</button>
+                    </div>
+                </div><!-- 结束 -->
+
+                <!-- 下载 & 清除效果-->
+                <div class="row my-5">
+                    <div class="col-md-6">
+                        <button id="download-btn" class="btn btn-primary btn-block">下载图片</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="revert-btn" class="btn btn-danger btn-block">移除滤镜</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚本 -->
+    <script src="caman.full.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
